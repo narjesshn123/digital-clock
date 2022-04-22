@@ -1,10 +1,6 @@
-let date = new Date();       
-        
-
-
-
 
 function clockFunction(){
+    let date = new Date(); 
     let clockHours = date.getHours();
     let clockMinuts = date.getMinutes();
     let clockSecound = date.getSeconds();
@@ -12,7 +8,7 @@ function clockFunction(){
     if(clockHours === 0){
         clockHours = 12;
     }
-    else if(clockHours>12){
+    if(clockHours>12){
         clockHours = clockHours - 12;
         section = "PM";                   
     }
@@ -23,7 +19,7 @@ function clockFunction(){
     
     let hours = `${clockHours} : ${clockMinuts} : ${clockSecound}  ${section}` ;        
     console.log(hours)
-    const divClock = document.querySelector(".clock").innerText = hours;
+    document.querySelector(".clock").innerText = hours;
 }
 
 setInterval(clockFunction, 1000)
